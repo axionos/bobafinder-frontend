@@ -1,9 +1,11 @@
 import React from 'react';
+import LoginPage from './LoginPage'
 
 class App extends React.Component{
 
   state = {
-    stores: []
+    stores: [],
+    page: "login"
   }
 
   componentDidMount(){
@@ -16,11 +18,17 @@ class App extends React.Component{
       })
   }
 
+  redirect = (page) => {
+    this.setState({
+      page: page
+    })
+  }
+
   render(){
     console.log(this.state)
     return (
       <div className="App">
-        i think this works
+        <LoginPage redirect={this.redirect}/>
       </div>
     );
   }
