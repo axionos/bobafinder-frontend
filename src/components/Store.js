@@ -21,7 +21,7 @@ class Store extends React.Component{
   }
 
   render(){
-    console.log('Store Props', this.props)
+
     return (
 
       <Row className="store-container justify-content-md-center">

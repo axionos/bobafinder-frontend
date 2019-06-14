@@ -1,24 +1,35 @@
-  import React from 'react';
-  import HomePage from './containers/HomePage'
-  import Nav from './components/Nav'
-  import CSS from './index.css';
+
+import React from 'react';
+import { Redirect, Switch, Route } from 'react-router-dom';
+import HomePage from './containers/HomePage'
+import css from './index.css';
+import LoginPage from './components/LoginPage'
+import SignupPage from './SignupPage'
 
 
 class App extends React.Component{
 
   state = {
-    stores: [],
+    stores: []
+  }
+
+  componentDidMount(){
+
   }
 
   render(){
-    console.log(this.state)
     return (
-      <div className="App">
-
-        <Nav />
-        <HomePage />
-
-      </div>
+        <Switch >
+          if (this.state.loggedIn){
+            console.log('set option')
+          }
+          <Route path="/signup" component={SignupPage}/>
+          <Route path="/login" render={ (props) => <LoginPage
+            loggedIn={this.state.loggedIn}
+            router={props}
+            /> }/>
+          <Route path="/main" component={HomePage}/>
+        </Switch>
     )
   }
 

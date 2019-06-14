@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link , Redirect } from 'react-router-dom'
 
 class LoginPage extends React.Component{
 
@@ -10,7 +10,8 @@ class LoginPage extends React.Component{
 
   componentDidMount(){
     if (!!localStorage.getItem("token")){
-      // need to verify if token is correct
+      this.props.router.history.push('/main')
+
     }
   }
 
@@ -20,7 +21,7 @@ class LoginPage extends React.Component{
     })
   }
 
-  handleLogin = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
 
     fetch('http://localhost:3000/login',{
@@ -33,13 +34,17 @@ class LoginPage extends React.Component{
     .then( res => res.json() )
     .then( data => {
       localStorage.setItem('token', data.token)
+      // needs to look to see if token is present and is not undefined
+      if (!!localStorage.token && localStorage.token !== 'undefined'){
+        this.props.router.history.push('/main')
+      }
     })
   }
 
   render(){
     return(
       <p>
-        <form onSubmit={this.handleLogin}>
+        <form onSubmit={this.handleSubmit}>
           Username
           <input type='text' name="username" onChange={this.handleChange}/>
           Password
