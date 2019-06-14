@@ -5,7 +5,7 @@ class Nav extends React.Component{
 
 
   render(){
-
+    console.log(this.props)
     return (
       <div className="nav">
         <div className="logo">LOGO</div>
@@ -13,7 +13,7 @@ class Nav extends React.Component{
           <li>Profile</li>
           <li>Sign Up</li>
           <li>Log In</li>
-          <li>Log Out</li>
+          <button onClick={this.props.handleLogOut}>Logout</button>
         </ul>
       </div>
     );
