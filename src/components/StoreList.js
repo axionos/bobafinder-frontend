@@ -18,9 +18,7 @@ class StoreList extends React.Component{
     // console.log('Search Props', this.props)
     return (
       <Container className="storeList">
-
         {this.renderStores()}
-
       </Container>
     );
   }

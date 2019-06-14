@@ -22,7 +22,7 @@ class HomePage extends React.Component{
 
   filterStore = (e) => {
     this.setState({
-      filter: e.target.value
+      filter: e.target.alt
     })
   }
 
