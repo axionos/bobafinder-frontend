@@ -5,8 +5,7 @@ class Store extends React.Component{
 
 
   render(){
-    console.log('Store Props', this.props)
-    // console.log('Store Props', this.props.store)
+    // console.log('Store Props', this.props)
     return (
       <div className="store">
         <h4>{this.props.store.name}</h4>

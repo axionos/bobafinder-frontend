@@ -5,13 +5,6 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import LoginPage from './components/LoginPage'
 import SignupPage from './SignupPage'
 
-const Home = () => {
-  return (
-    <div>
-    </div>
-  );
-};
-
 ReactDOM.render(
   <BrowserRouter>
     <Route path="/signup" component={SignupPage}/>
