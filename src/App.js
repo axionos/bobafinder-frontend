@@ -1,5 +1,10 @@
 import React from 'react';
-import LoginPage from './LoginPage'
+import HomePage from './containers/HomePage'
+import Nav from './components/Nav'
+import css from './index.css';
+// import LoginPage from './containers/LoginPage'
+// import SignUpPage from './containers/SignUpPage'
+// import ProfilePage from './containers/ProfilePage'
 
 class App extends React.Component{
 
@@ -8,6 +13,7 @@ class App extends React.Component{
     page: "login"
   }
 
+  // FETCH USER DATA FROM DATABASE
   componentDidMount(){
     fetch('http://localhost:3000/')
       .then( res => res.json() )
@@ -16,19 +22,23 @@ class App extends React.Component{
           stores:stores.stores
         })
       })
-  }
+  } // END FETCHING
 
-  redirect = (page) => {
-    this.setState({
-      page: page
-    })
-  }
+
+  /////// REDIRECT PROP FOR LOGIN PAGE //////
+  // redirect = (page) => {
+  //   this.setState({
+  //     page: page
+  //   })
+  // }////////////////////////////////////////
 
   render(){
     console.log(this.state)
     return (
       <div className="App">
-        <LoginPage redirect={this.redirect}/>
+        <Nav />
+        <HomePage />
+
       </div>
     );
   }
