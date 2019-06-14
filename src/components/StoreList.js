@@ -1,5 +1,7 @@
 import React from 'react';
 import Store from './Store'
+import Container from 'react-bootstrap/Container'
+
 
 
 class StoreList extends React.Component{
@@ -15,9 +17,9 @@ class StoreList extends React.Component{
   render(){
     // console.log('Search Props', this.props)
     return (
-      <div className="storeList">
+      <Container className="storeList">
         {this.renderStores()}
-      </div>
+      </Container>
     );
   }
 

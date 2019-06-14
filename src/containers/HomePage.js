@@ -6,7 +6,9 @@ import Nav from '../components/Nav'
 class HomePage extends React.Component{
   state={
     stores: [],
-    loggedIn: true
+    loggedIn: true , 
+    filter: ''
+
   }
 
   // FETCH STORES DATA FROM API
@@ -34,13 +36,30 @@ class HomePage extends React.Component{
 
   }
 
+  filterStore = (e) => {
+    this.setState({
+      filter: e.target.alt
+    })
+  }
+
   render(){
-    // console.log('Home Page State', this.state.stores)
+
+ 
     return (
       <div className="homePage">
         <Nav routes={this.props} handleLogOut={this.handleLogOut}/>
-        <SearchBar />
-        <StoreList stores={this.state.stores}/>
+        <SearchBar
+          stores={this.state.stores}
+          filterStore={this.filterStore}/>
+        <StoreList
+          stores={
+            this.state.filter.length === 0 ?
+            this.state.stores :
+            this.state.stores.filter(store => {
+              return store.name === this.state.filter
+            })
+          }/>
+
       </div>
     );
   }

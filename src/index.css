@@ -5,13 +5,67 @@ body {
 }
 
 .searchBar {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
   /* width: 600px; */
 }
+
 .filter-btns-container {
   list-style-type: none;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.filter-btn {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-right: 0 none;
+}
+
+.filter-btn.boba-guys {
+  border-right: 1px solid #ccc;
+}
+
+.filter-btn img {
+  width: 100%;
+  padding: 20px;
+}
+
+.store-container {
+  border-bottom: 1px solid #ccc
+}
+
+.store-conts {
+  display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  align-items: center;
+}
+
+.store-photo{
+  width: 200px;
+  padding: 15px;
+}
+
+.store-photo img {
   width: 100%;
 }
 
-.store {
-  border-top: 1px solid #000
+.store-detail {
+  padding: 15px;
+}
+
+.like {
+  padding-right: 10px;
+  display: inline;
+}
+
+.visited {
+  display: inline;
 }
