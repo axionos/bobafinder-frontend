@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class LoginPage extends React.Component{
 
@@ -9,7 +10,7 @@ class LoginPage extends React.Component{
 
   componentDidMount(){
     if (!!localStorage.getItem("token")){
-      this.props.redirect("homepage")
+      // need to verify if token is correct
     }
   }
 
@@ -20,8 +21,8 @@ class LoginPage extends React.Component{
   }
 
   handleLogin = (e) => {
-
     e.preventDefault()
+
     fetch('http://localhost:3000/login',{
       method: "POST",
       headers: {
@@ -29,20 +30,27 @@ class LoginPage extends React.Component{
       },
       body: JSON.stringify(this.state)
     })
-    .then ( res => res.json() )
+    .then( res => res.json() )
     .then( data => {
       localStorage.setItem('token', data.token)
     })
   }
 
   render(){
-    console.log(this.state)
     return(
-      <form onSubmit={this.handleLogin}>
-        <input type='text' name="username" onChange={this.handleChange}/>
-        <input type='password' name="password" onChange={this.handleChange} />
-        <input type='submit' value="Log In" />
-      </form>
+      <p>
+        <form onSubmit={this.handleLogin}>
+          Username
+          <input type='text' name="username" onChange={this.handleChange}/>
+          Password
+          <input type='password' name="password" onChange={this.handleChange} />
+          <input type='submit' value="Log In" />
+        </form>
+        <Link to='/signup'>Sign Up </Link>
+        {
+          // waiting on browser router  temp solution
+        }
+      </p>
     )
   }
 }
