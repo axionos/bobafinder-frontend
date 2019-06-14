@@ -7,11 +7,36 @@ body {
 .searchBar {
   /* width: 600px; */
 }
+
 .filter-btns-container {
   list-style-type: none;
   width: 100%;
 }
 
-.store {
+.store-container {
   border-top: 1px solid #000
+}
+
+.store-conts {
+  display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  align-items: center;
+}
+
+.store-photo{
+  width: 200px;
+  padding: 15px;
+}
+
+.store-photo img {
+  width: 100%;
+}
+
+.store-detail {
+  padding: 15px;
+}
+
+.like {
+  padding-right: 20px;
 }
