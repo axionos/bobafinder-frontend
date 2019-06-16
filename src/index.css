@@ -4,6 +4,22 @@ body {
   font-family: sans-serif;
 }
 
+/*/////   NAVBAR   /////*/
+
+.container {
+  max-width: 1080px;
+}
+
+.navbar-brand {
+  margin-right: 50px;
+}
+
+.nav-link {
+  margin: 0 10px 0 10px;
+}
+
+/*/////   FILTER   /////*/
+
 .searchBar {
   display: -webkit-flex;
   display: -ms-flex;
@@ -12,30 +28,47 @@ body {
   /* width: 600px; */
 }
 
+.filter-by {
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 24px;
+}
+
 .filter-btns-container {
   list-style-type: none;
 
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  padding: 20px;
+  padding: 0px 50px 50px 50px;
   margin: 0 auto;
 }
 
 .filter-btn {
-  width: 200px;
+  width: 150px;
   border: 1px solid #ccc;
   border-right: 0 none;
 }
 
+.filter-btn.kungfu-tea {
+  padding: 15px;
+}
+
+.filter-btn.vivi {
+  padding: 10px;
+}
+
 .filter-btn.boba-guys {
   border-right: 1px solid #ccc;
+  padding: 10px;
 }
 
 .filter-btn img {
   width: 100%;
   padding: 20px;
 }
+
+/* ///// SEARCH RESULTS /////*/
 
 .store-container {
   border-bottom: 1px solid #ccc

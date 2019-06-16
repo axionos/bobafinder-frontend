@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link , Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class LoginPage extends React.Component{
 
@@ -10,7 +10,7 @@ class LoginPage extends React.Component{
 
   componentDidMount(){
     if (!!localStorage.getItem("token")){
-      this.props.router.history.push('/main')
+      this.props.router.history.push('/')
 
     }
   }
@@ -36,14 +36,14 @@ class LoginPage extends React.Component{
       localStorage.setItem('token', data.token)
       // needs to look to see if token is present and is not undefined
       if (!!localStorage.token && localStorage.token !== 'undefined'){
-        this.props.router.history.push('/main')
+        this.props.router.history.push('/')
       }
     })
   }
 
   render(){
     return(
-      <p>
+      <div>
         <form onSubmit={this.handleSubmit}>
           Username
           <input type='text' name="username" onChange={this.handleChange}/>
@@ -55,7 +55,7 @@ class LoginPage extends React.Component{
         {
           // waiting on browser router  temp solution
         }
-      </p>
+      </div>
     )
   }
 }
