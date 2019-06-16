@@ -43,8 +43,6 @@ class HomePage extends React.Component{
   }
 
   render(){
-
-
     return (
       <div className="homePage">
         <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>
