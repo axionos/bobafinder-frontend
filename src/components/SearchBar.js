@@ -10,9 +10,9 @@ class SearchBar extends React.Component{
       <div className="searchBar">
 
 
-        <p className="filter-by">
-          <strong>Filter by Stores</strong>
-        </p>
+        <div className="filter-by">
+          <p className="filter-by-conts">Filter by Stores</p>
+        </div>
         <div className="filter-btns-container">
           <div className="filter-btn">
             <img
