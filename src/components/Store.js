@@ -14,6 +14,19 @@ class Store extends React.Component{
     this.setState({
       like: !this.state.like
     })
+
+    fetch('http://localhost:3000/favorite',{
+      method: "POST",
+      headers: {
+        "Authorization": localStorage.getItem("token"),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({store_id:e.target.id})
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
   }
 
   handleClickVisited = (e) => {
@@ -26,12 +39,15 @@ class Store extends React.Component{
     fetch('http://localhost:3000/visit',{
       method: "POST",
       headers: {
-        "Authorization": localStorage.getItem("token")
+        "Authorization": localStorage.getItem("token"),
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({store_id:e.target.id})
     })
     .then(res => res.json())
-    .then(data => console.log(data.user.id))
+    .then(data => {
+      console.log(data)
+    })
   }
 
   render(){

@@ -34,13 +34,14 @@ class LoginPage extends React.Component{
     .then( res => res.json() )
     .then( data => {
       localStorage.setItem('token', data.token)
-      console.log(data.token)
       // needs to look to see if token is present and is not undefined
       // if (!!localStorage.token && localStorage.token !== 'undefined'){
       //   this.props.router.history.push('/main')
       // }
       if (localStorage.getItem("token")==="undefined"){
         localStorage.clear()
+      } else if (!!localStorage.getItem("token")){
+        this.props.router.history.push('/main')
       }
     })
   }
