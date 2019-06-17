@@ -11,7 +11,6 @@ class LoginPage extends React.Component{
   componentDidMount(){
     if (!!localStorage.getItem("token")){
       this.props.router.history.push('/main')
-
     }
   }
 
@@ -35,7 +34,12 @@ class LoginPage extends React.Component{
     .then( data => {
       localStorage.setItem('token', data.token)
       // needs to look to see if token is present and is not undefined
-      if (!!localStorage.token && localStorage.token !== 'undefined'){
+      // if (!!localStorage.token && localStorage.token !== 'undefined'){
+      //   this.props.router.history.push('/main')
+      // }
+      if (localStorage.getItem("token")==="undefined"){
+        localStorage.clear()
+      } else if (!!localStorage.getItem("token")){
         this.props.router.history.push('/main')
       }
     })

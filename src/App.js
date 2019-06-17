@@ -29,6 +29,8 @@ class App extends React.Component{
             router={props}
             /> }/>
           <Route path="/main" component={HomePage}/>
+          <Route component={HomePage}/>
+          //default if wrong routes will redirect to homepage 
         </Switch>
     )
   }
