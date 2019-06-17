@@ -83,20 +83,7 @@ class Store extends React.Component{
   }
 
   render(){
-        // console.log(this.props)
 
-        // if( this.props.visited){
-        //   console.log('ive been visited' , this.props.store.name)
-        //   this.setState({
-        //     visited: true
-        //   })
-        // }
-        // if( this.props.favorite){
-        //   console.log('ive been favorited' , this.props.store.name)
-        //   this.setState({
-        //     like: true
-        //   })
-        // }
     return (
       <Row className="store-container justify-content-md-center">
         <Col></Col>
