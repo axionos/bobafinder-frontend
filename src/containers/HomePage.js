@@ -1,7 +1,7 @@
 import React from 'react';
 import StoreList from '../components/StoreList'
 import SearchBar from '../components/SearchBar'
-import Nav from '../components/Nav'
+import NavBar from '../components/NavBar'
 
 class HomePage extends React.Component{
   state={
@@ -44,10 +44,9 @@ class HomePage extends React.Component{
 
   render(){
 
-
     return (
       <div className="homePage">
-        <Nav routes={this.props} handleLogOut={this.handleLogOut}/>
+        <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>
         <SearchBar
           stores={this.state.stores}
           filterStore={this.filterStore}/>
