@@ -9,7 +9,9 @@ class NavBar extends React.Component{
 
         <Navbar expand="lg">
           <Container>
-            <Navbar.Brand href="/" className="logo">Boba Finder</Navbar.Brand>
+            <Navbar.Brand href="/" className="logo">
+              Boba Finder
+            </Navbar.Brand>
             <Nav className="justify-content-end">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/signup">SignUp</Nav.Link>
