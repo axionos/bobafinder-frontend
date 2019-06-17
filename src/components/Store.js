@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 class Store extends React.Component{
   state={
     like: false,
-    like:this.props.favorite,
+    // like:this.props.favorite,
     visited: false
   }
 
@@ -79,7 +79,7 @@ class Store extends React.Component{
   }
 
   render(){
-    console.log('Store Props', this.props)
+    // console.log('Store Props', this.props)
 
     return (
       <Row className="store-container justify-content-md-center">

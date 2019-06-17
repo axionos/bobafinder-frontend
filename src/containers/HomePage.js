@@ -8,7 +8,6 @@ class HomePage extends React.Component{
     stores: [],
     loggedIn: true ,
     filter: ''
-
   }
 
   // FETCH STORES DATA FROM API
@@ -46,7 +45,7 @@ class HomePage extends React.Component{
 
     return (
       <div className="homePage">
-        <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>
+        
         <SearchBar
           stores={this.state.stores}
           filterStore={this.filterStore}/>
