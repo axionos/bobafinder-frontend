@@ -1,7 +1,6 @@
 import React from 'react';
 import StoreList from '../components/StoreList'
 import SearchBar from '../components/SearchBar'
-import NavBar from '../components/NavBar'
 
 class HomePage extends React.Component{
   state={
@@ -45,7 +44,7 @@ class HomePage extends React.Component{
 
     return (
       <div className="homePage">
-        
+
         <SearchBar
           stores={this.state.stores}
           filterStore={this.filterStore}/>

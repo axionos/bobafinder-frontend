@@ -18,6 +18,13 @@ class App extends React.Component{
     drawerOpen: false
   }
 
+  componentDidMount(){
+    fetch('http://localhost:3000/profile', {
+      headers: {"Authorization": localStorage.getItem("token")}
+    })
+    
+  }
+
   drawerToggleClickHandler = () => {
     this.setState({
       drawerOpen: !this.state.drawerOpen
