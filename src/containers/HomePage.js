@@ -14,7 +14,6 @@ class HomePage extends React.Component{
   // FETCH STORES DATA FROM API
   // rejects user if they did not log in ( redirects to login screen)
   componentDidMount(){
-
     if (!localStorage.getItem("token")){
       this.props.history.push("/login")
     }
@@ -42,7 +41,9 @@ class HomePage extends React.Component{
     })
   }
 
+
   render(){
+
     return (
       <div className="homePage">
         <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>

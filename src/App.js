@@ -22,6 +22,7 @@ class App extends React.Component{
 
   render(){
     return (
+
       <Switch >
         if (this.state.loggedIn){
           console.log('set option')
@@ -37,6 +38,7 @@ class App extends React.Component{
         />
         <Route exact path="/profile" component={ProfilePage}/>
       </Switch>
+
     )
   }
 
