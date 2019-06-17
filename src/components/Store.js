@@ -9,15 +9,18 @@ class Store extends React.Component{
   }
 
   componentDidMount(){
-    // console.log('im here')
-    // if this.props.visited {
-    //   this.setState({
-    //     visited:true
-    //   })
-    // }
-    // this.props.favorited
-    console.log(this.props)
-
+    // console.log(this.props.store.visited)
+    if( this.props.store.visited){
+      this.setState({
+        visited: true
+      })
+    }
+    // console.log(this.props.store.favorite)
+    if( this.props.store.favorite){
+      this.setState({
+        like: true
+      })
+    }
   }
 
   handleClickLike = (e) => {
@@ -42,7 +45,7 @@ class Store extends React.Component{
   }
 
   handleClickVisited = (e) => {
-    console.log(e.target.id)
+    // console.log(e.target.id)
 
     this.setState({
       visited: !this.state.visited
@@ -80,7 +83,20 @@ class Store extends React.Component{
   }
 
   render(){
+        // console.log(this.props)
 
+        // if( this.props.visited){
+        //   console.log('ive been visited' , this.props.store.name)
+        //   this.setState({
+        //     visited: true
+        //   })
+        // }
+        // if( this.props.favorite){
+        //   console.log('ive been favorited' , this.props.store.name)
+        //   this.setState({
+        //     like: true
+        //   })
+        // }
     return (
       <Row className="store-container justify-content-md-center">
         <Col></Col>

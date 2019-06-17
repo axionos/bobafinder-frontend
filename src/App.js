@@ -24,15 +24,11 @@ class App extends React.Component{
     return (
 
       <Switch >
-        if (this.state.loggedIn){
-          // console.log('set option')
-        }
 
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/signup" component={SignupPage}/>
         <Route exact path="/login" render={ (props) =>
          <LoginPage
-          loggedIn={this.state.loggedIn}
           router={props}
           /> }
         />

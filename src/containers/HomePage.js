@@ -6,10 +6,7 @@ import NavBar from '../components/NavBar'
 class HomePage extends React.Component{
   state={
     stores: [],
-    loggedIn: true ,
-    filter: '',
-    userStores: []
-
+    filter: ''
   }
 
   // FETCH STORES DATA FROM API
@@ -19,28 +16,17 @@ class HomePage extends React.Component{
       this.props.history.push("/login")
     }
 
-    fetch("http://localhost:3000/stores")
+    fetch("http://localhost:3000/stores", {
+      headers:{
+        "Authorization": localStorage.getItem("token")
+      }
+    })
     .then(response => response.json())
     .then(data => {
       this.setState({
         stores: data.stores
       })
     })
-
-    // getting all userstores instances
-    fetch('http://localhost:3000/user_stores',{
-      method: "GET",
-        headers: {
-          "Authorization": localStorage.getItem("token"),
-        }
-    })
-      .then( res => res.json())
-      .then( data => {
-        this.setState({
-          userStores: data
-        })
-        // needs to set header to authroize
-      })
 
   } // End Component did mount
 
@@ -60,7 +46,6 @@ class HomePage extends React.Component{
 
 
   render(){
-
     return (
       <div className="homePage">
         <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>
@@ -75,7 +60,6 @@ class HomePage extends React.Component{
               return store.name === this.state.filter
             })
           }
-          userStores={ this.state.userStores }
         />
 
       </div>
