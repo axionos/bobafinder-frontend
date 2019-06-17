@@ -5,8 +5,19 @@ import Col from 'react-bootstrap/Col'
 class Store extends React.Component{
   state={
     like: false,
+    like:this.props.favorite,
     visited: false
   }
+
+  // componentDidMount(){
+    // if this.props.visited {
+    //   this.setState({
+    //     visited:true
+    //   })
+    // }
+    // this.props.favorited
+
+  // }
 
   handleClickLike = (e) => {
     console.log(e.target.id)
@@ -68,11 +79,11 @@ class Store extends React.Component{
             <p>{this.props.store.address}</p>
             <div className="like" onClick={this.handleClickLike} id={this.props.store.id}>
               { this.state.like ?
-                  (<img src="https://img.icons8.com/color/26/000000/filled-like.png" alt="full heart" />) : (<img src="https://img.icons8.com/material-outlined/26/000000/filled-like.png" alt="empty heart" id={this.props.store.id} />) }
+                  (<img src="https://img.icons8.com/color/26/000000/filled-like.png" alt="full heart" id={this.props.store.id}/>) : (<img src="https://img.icons8.com/material-outlined/26/000000/filled-like.png" alt="empty heart" id={this.props.store.id} />) }
             </div>
             <div className="visited" onClick={this.handleClickVisited}>
             { this.state.visited ?
-                <img src="https://img.icons8.com/color/32/000000/ok.png" alt="full checked"/> : <img src="https://img.icons8.com/material-outlined/32/000000/ok.png" alt="empty checked mark" id={this.props.store.id} /> }
+                <img src="https://img.icons8.com/color/32/000000/ok.png" alt="full checked" id={this.props.store.id}/> : <img src="https://img.icons8.com/material-outlined/32/000000/ok.png" alt="empty checked mark" id={this.props.store.id} /> }
             </div>
           </div>
         </Col>

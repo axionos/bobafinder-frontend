@@ -11,7 +11,6 @@ class LoginPage extends React.Component{
   componentDidMount(){
     if (!!localStorage.getItem("token")){
       this.props.router.history.push('/main')
-
     }
   }
 
