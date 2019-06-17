@@ -5,7 +5,7 @@ class SearchBar extends React.Component{
 
 
   render(){
-    console.log('Search Bar props', this.props)
+    // console.log('Search Bar props', this.props)
     return (
       <div className="searchBar">
 

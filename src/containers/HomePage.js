@@ -6,9 +6,7 @@ import NavBar from '../components/NavBar'
 class HomePage extends React.Component{
   state={
     stores: [],
-    loggedIn: true ,
     filter: ''
-
   }
 
   // FETCH STORES DATA FROM API
@@ -18,13 +16,18 @@ class HomePage extends React.Component{
       this.props.history.push("/login")
     }
 
-    fetch("http://localhost:3000/stores")
+    fetch("http://localhost:3000/stores", {
+      headers:{
+        "Authorization": localStorage.getItem("token")
+      }
+    })
     .then(response => response.json())
     .then(data => {
       this.setState({
         stores: data.stores
       })
     })
+
   } // End Component did mount
 
   handleLogOut = () => {
@@ -43,7 +46,6 @@ class HomePage extends React.Component{
 
 
   render(){
-
     return (
       <div className="homePage">
         <NavBar routes={this.props} handleLogOut={this.handleLogOut}/>
@@ -57,7 +59,8 @@ class HomePage extends React.Component{
             this.state.stores.filter(store => {
               return store.name === this.state.filter
             })
-          }/>
+          }
+        />
 
       </div>
     );
