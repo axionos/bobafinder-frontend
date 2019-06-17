@@ -13,16 +13,16 @@ import Backdrop from './SideDrawer/Backdrop'
 
 
 class App extends React.Component{
+
   state = {
     stores: [],
-    drawerOpen: false
+    drawerOpen: false,
   }
 
   componentDidMount(){
     fetch('http://localhost:3000/profile', {
       headers: {"Authorization": localStorage.getItem("token")}
     })
-    
   }
 
   drawerToggleClickHandler = () => {
@@ -56,7 +56,6 @@ class App extends React.Component{
           <Route exact path="/signup" component={SignupPage}/>
           <Route exact path="/login" render={ (props) =>
            <LoginPage
-            loggedIn={this.state.loggedIn}
             router={props}
             /> }
           />

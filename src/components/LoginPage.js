@@ -40,7 +40,8 @@ class LoginPage extends React.Component{
       if (localStorage.getItem("token")==="undefined"){
         localStorage.clear()
       } else if (!!localStorage.getItem("token")){
-        this.props.router.history.push('/')
+        window.location.replace(`http://localhost:3001/`)
+        // this.props.router.history.push('/')
 
       }
     })

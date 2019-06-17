@@ -5,7 +5,19 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 
 class NavBar extends React.Component{
 
-  
+  log = () => {
+    if (localStorage.getItem('token')){
+      return <Nav.Link onClick={this.handleLogOut}>Log Out</Nav.Link>
+    } else {
+      return <Nav.Link href="/login">Log In</Nav.Link>
+    }
+  }
+
+  handleLogOut = (e) => {
+    localStorage.clear()
+    window.location.replace(`http://localhost:3001/`)
+    // this.props.history.push("/login")
+  }
 
   render(){
     // console.log(this.props)
@@ -19,7 +31,9 @@ class NavBar extends React.Component{
             <Nav className="justify-content-end">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/signup">SignUp</Nav.Link>
-              <Nav.Link href="/login">LogIn</Nav.Link>
+
+              {this.log()}
+
               <Nav.Link
                 onClick={this.props.drawerToggleClickHandler}>Profile</Nav.Link>
             </Nav>
