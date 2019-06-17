@@ -20,7 +20,7 @@ class StoreList extends React.Component{
   }
 
   render(){
-    console.log('Search Props', this.props)
+    // console.log('Search Props', this.props)
     return (
       <Container className="storeList">
         {this.renderStores()}

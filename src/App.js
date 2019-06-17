@@ -15,14 +15,20 @@ import Backdrop from './SideDrawer/Backdrop'
 class App extends React.Component{
   state = {
     stores: [],
-    drawerOpen: false
+    drawerOpen: false,
+    favorites: [],
+    visited: []
   }
 
   componentDidMount(){
     fetch('http://localhost:3000/profile', {
       headers: {"Authorization": localStorage.getItem("token")}
     })
-    
+    .then(res => res.json())
+    .then(data => this.setState({
+      favorites: data.favorites,
+      visited: data.visited
+    }))
   }
 
   drawerToggleClickHandler = () => {
@@ -38,6 +44,7 @@ class App extends React.Component{
   }
 
   render(){
+    console.log('App state', this.state)
     // RENDER THE BACKDROP CONDITIONALLY
     let backdrop;
     if(this.state.drawerOpen){
@@ -47,8 +54,12 @@ class App extends React.Component{
 
     return (
       <div className="conts-wrapper">
-        <NavBar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
-        <SideDrawer show={this.state.drawerOpen}/>
+        <NavBar
+          drawerToggleClickHandler={this.drawerToggleClickHandler}/>
+        <SideDrawer
+          show={this.state.drawerOpen}
+          favorites={this.state.favorites}
+          visited={this.state.visited}/>
         {backdrop}
 
         <Switch >

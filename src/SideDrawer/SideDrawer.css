@@ -20,9 +20,30 @@
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
+  padding: 20px;
+}
 
+.title {
+  padding-bottom: 20px;
+}
+
+.favorite-list {
+
+}
+
+.visited-list {
+  padding-top: 40px;
 }
 
 .side-drawer.open {
   transform: translateX(0);
+}
+
+.store-name {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.store-address {
+
 }
