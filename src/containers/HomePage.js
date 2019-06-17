@@ -7,7 +7,8 @@ class HomePage extends React.Component{
   state={
     stores: [],
     loggedIn: true ,
-    filter: ''
+    filter: '',
+    userStores: []
 
   }
 
@@ -25,6 +26,22 @@ class HomePage extends React.Component{
         stores: data.stores
       })
     })
+
+    // getting all userstores instances
+    fetch('http://localhost:3000/user_stores',{
+      method: "GET",
+        headers: {
+          "Authorization": localStorage.getItem("token"),
+        }
+    })
+      .then( res => res.json())
+      .then( data => {
+        this.setState({
+          userStores: data
+        })
+        // needs to set header to authroize
+      })
+
   } // End Component did mount
 
   handleLogOut = () => {
@@ -57,7 +74,9 @@ class HomePage extends React.Component{
             this.state.stores.filter(store => {
               return store.name === this.state.filter
             })
-          }/>
+          }
+          userStores={ this.state.userStores }
+        />
 
       </div>
     );

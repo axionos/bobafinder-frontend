@@ -25,7 +25,7 @@ class App extends React.Component{
 
       <Switch >
         if (this.state.loggedIn){
-          console.log('set option')
+          // console.log('set option')
         }
 
         <Route exact path="/" component={HomePage}/>

@@ -5,22 +5,23 @@ import Col from 'react-bootstrap/Col'
 class Store extends React.Component{
   state={
     like: false,
-    like:this.props.favorite,
     visited: false
   }
 
-  // componentDidMount(){
+  componentDidMount(){
+    // console.log('im here')
     // if this.props.visited {
     //   this.setState({
     //     visited:true
     //   })
     // }
     // this.props.favorited
+    console.log(this.props)
 
-  // }
+  }
 
   handleClickLike = (e) => {
-    console.log(e.target.id)
+    // console.log(e.target.id)
 
     this.setState({
       like: !this.state.like
@@ -79,7 +80,6 @@ class Store extends React.Component{
   }
 
   render(){
-    console.log('Store Props', this.props)
 
     return (
       <Row className="store-container justify-content-md-center">
