@@ -37,8 +37,8 @@ class App extends React.Component{
   favoriteClickHandler = (store) => {
 
     // CHECK TO SEE IF THE CURRENT FAVORITE STATE INCLUDES THE STORE
-    if (this.state.favorites.includes(store)) {
 
+    if (this.state.favorites.map((fav) => (fav.id)).includes(store.id)) {
       // IF INCLUDED, REMOVES IT FROM THE STATE
       const newFavs = this.state.favorites.filter ((fav) =>{
         return fav.id !== store.id
@@ -55,7 +55,7 @@ class App extends React.Component{
   }
 
   visitedClickHandler = (store) => {
-    if (this.state.visited.includes(store)) {
+    if (this.state.visited.map((fav) => (fav.id)).includes(store.id)) {
 
       const newVisited = this.state.visited.filter ((v) =>{
         return v.id !== store.id
