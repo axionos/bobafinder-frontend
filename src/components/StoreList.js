@@ -14,6 +14,8 @@ class StoreList extends React.Component{
       return <Store
         key={store.id}
         store={store}
+        favoriteHandler={this.props.favoriteHandler}
+        visitedHandler={this.props.visitedHandler}
       />
     })
 

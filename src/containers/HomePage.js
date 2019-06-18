@@ -59,6 +59,9 @@ class HomePage extends React.Component{
               return store.name === this.state.filter
             })
           }
+          favoriteHandler={this.props.favoriteClickHandler}
+          visitedHandler={this.props.visitedClickHandler}
+
         />
 
       </div>

@@ -40,7 +40,8 @@ class Store extends React.Component{
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      // console.log('handleClickLike prop', this.props.store)
+      this.props.favoriteHandler(this.props.store)
     })
   }
 
@@ -61,7 +62,7 @@ class Store extends React.Component{
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      this.props.visitedHandler(this.props.store)
     })
   }
 
@@ -83,7 +84,7 @@ class Store extends React.Component{
   }
 
   render(){
-
+    console.log('store props', this.props)
     return (
       <Row className="store-container justify-content-md-center">
         <Col></Col>
@@ -98,8 +99,7 @@ class Store extends React.Component{
             <p>{this.props.store.address}</p>
             <div className="like" onClick={this.handleClickLike} id={this.props.store.id}>
               { this.state.like ?
-
-                  (<img src="https://img.icons8.com/color/26/000000/filled-like.png" alt="full heart" id={this.props.store.id}/>) : (<img src="https://img.icons8.com/material-outlined/26/000000/filled-like.png" alt="empty heart" id={this.props.store.id} />) }
+                (<img src="https://img.icons8.com/color/26/000000/filled-like.png" alt="full heart" id={this.props.store.id}/>) : (<img src="https://img.icons8.com/material-outlined/26/000000/filled-like.png" alt="empty heart" id={this.props.store.id} />) }
             </div>
             <div className="visited" onClick={this.handleClickVisited}>
             { this.state.visited ?

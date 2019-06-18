@@ -17,20 +17,32 @@ class App extends React.Component{
     stores: [],
     drawerOpen: false,
     favorites: [],
-    visited: []
+    visited: [],
   }
 
   componentDidMount(){
     fetch('http://localhost:3000/profile', {
       headers: {"Authorization": localStorage.getItem("token")}
     })
-
     .then(res => res.json())
     .then(data => this.setState({
       favorites: data.favorites,
       visited: data.visited
     }, () => console.log('profile data', data)))
 
+  }
+
+  favoriteClickHandler = (e) => {
+    this.setState({
+      favorites: [...this.state.favorites, e]
+    })
+  }
+
+  visitedClickHandler = (e) => {
+    this.setState({
+      visited: [...this.state.visited, e]
+
+    })
   }
 
   drawerToggleClickHandler = () => {
@@ -53,7 +65,7 @@ class App extends React.Component{
       backdrop = <Backdrop
         backdropClickHandler={this.backdropClickHandler}/>;
     }
-
+    console.log('App state', this.state)
     return (
       <div className="conts-wrapper">
         <NavBar
@@ -67,7 +79,11 @@ class App extends React.Component{
           {backdrop}
         </React.Fragment>) : null}
         <Switch >
-          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/" render={ (props) =>
+           <HomePage favoriteClickHandler={this.favoriteClickHandler}
+           visitedClickHandler={this.visitedClickHandler}
+            {...props}
+            /> }/>
           <Route exact path="/signup" component={SignupPage}/>
           <Route exact path="/login" render={ (props) =>
            <LoginPage
