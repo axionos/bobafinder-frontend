@@ -18,6 +18,7 @@ class App extends React.Component{
     drawerOpen: false,
     favorites: [],
     visited: [],
+    username: ''
   }
 
   componentDidMount(){
@@ -27,13 +28,16 @@ class App extends React.Component{
     .then(res => res.json())
     .then(data => this.setState({
       favorites: data.favorites,
-      visited: data.visited
+      visited: data.visited,
+      username: data.name
     }, () => console.log('profile data', data)))
+    // debugger
   }
 
   favoriteClickHandler = (store) => {
+
     // CHECK TO SEE IF THE CURRENT FAVORITE STATE INCLUDES THE STORE
-    // debugger
+
     if (this.state.favorites.map((fav) => (fav.id)).includes(store.id)) {
       // IF INCLUDED, REMOVES IT FROM THE STATE
       const newFavs = this.state.favorites.filter ((fav) =>{
@@ -98,7 +102,8 @@ class App extends React.Component{
           <SideDrawer
             show={this.state.drawerOpen}
             favorites={this.state.favorites}
-            visited={this.state.visited}/>
+            visited={this.state.visited}
+            username={this.state.username}/>
           {backdrop}
         </React.Fragment>) : null}
         <Switch >
