@@ -29,7 +29,7 @@ class App extends React.Component{
     .then(data => this.setState({
       favorites: data.favorites,
       visited: data.visited,
-      username: data.name
+      username: data.username
     }, () => console.log('profile data', data)))
     // debugger
   }
