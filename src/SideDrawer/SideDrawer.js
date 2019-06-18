@@ -28,6 +28,15 @@ class SideDrawer extends React.Component {
 
     return(
       <div className={drawerClasses}>
+        <div className="hello">
+          <div className="boba-container">
+            <img src="https://i.pinimg.com/236x/87/97/26/879726b93ec1f4c2f64cc2bc52a4d8ec--bubble-tea-art-reference.jpg" alt="boba icon"/>
+          </div>
+          <div>
+            <h2>Hello, <span class="name">{this.props.username}</span>!</h2>
+             <p>You have {this.props.favorites.length} favorite stores and {this.props.visited.length} visited stores 😃</p>
+          </div>
+        </div>
         <div className="favorite-list">
           <h3 className="title">Favorite Stores</h3>
           {this.renderFavorites()}
