@@ -15,7 +15,7 @@ class NavBar extends React.Component{
     if (localStorage.getItem('token')){
       return
     } else {
-      return <Nav.Link href="/signup">SignUp</Nav.Link>
+      return <Nav.Link href="/signup">Sign Up</Nav.Link>
     }
   }
 
