@@ -11,6 +11,14 @@ class NavBar extends React.Component{
     }
   }
 
+  signUp = () => {
+    if (localStorage.getItem('token')){
+      return
+    } else {
+      return <Nav.Link href="/signup">SignUp</Nav.Link>
+    }
+  }
+
   handleLogOut = (e) => {
     localStorage.clear()
     window.location.replace(`http://localhost:3001/`)
@@ -27,7 +35,7 @@ class NavBar extends React.Component{
             </Navbar.Brand>
             <Nav className="justify-content-end">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/signup">SignUp</Nav.Link>
+              {this.signUp()}
 
               {this.log()}
 
