@@ -40,8 +40,7 @@ class Store extends React.Component{
     })
     .then(res => res.json())
     .then(data => {
-      // console.log('handleClickLike prop', this.props.store)
-      this.props.favoriteHandler(this.props.store)
+       this.props.favoriteHandler(this.props.store)
     })
   }
 
@@ -84,7 +83,7 @@ class Store extends React.Component{
   }
 
   render(){
-    console.log('store props', this.props)
+    // console.log('store props', this.props)
     return (
       <Row className="store-container justify-content-md-center">
         <Col></Col>

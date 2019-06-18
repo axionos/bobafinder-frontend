@@ -3,7 +3,7 @@ import React from 'react';
 
 class Favorites extends React.Component {
   render(){
-    console.log('favorites props', this.props)
+    // console.log('favorites props', this.props)
     return(
       <div>
         <div className="favorites">

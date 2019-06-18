@@ -29,20 +29,42 @@ class App extends React.Component{
       favorites: data.favorites,
       visited: data.visited
     }, () => console.log('profile data', data)))
-
   }
 
-  favoriteClickHandler = (e) => {
-    this.setState({
-      favorites: [...this.state.favorites, e]
-    })
+  favoriteClickHandler = (store) => {
+    // CHECK TO SEE IF THE CURRENT FAVORITE STATE INCLUDES THE STORE
+    if (this.state.favorites.includes(store)) {
+      // IF INCLUDED, REMOVES IT FROM THE STATE
+      const newFavs = this.state.favorites.filter ((fav) =>{
+        return fav.id !== store.id
+      })
+      this.setState({
+        favorites: newFavs
+      })
+      // IF NOT INCLUDED, ADD IT TO THE STATE
+    } else {
+      this.setState({
+        favorites: [...this.state.favorites, store]
+      })
+    }
   }
 
-  visitedClickHandler = (e) => {
-    this.setState({
-      visited: [...this.state.visited, e]
+  visitedClickHandler = (store) => {
+    if (this.state.visited.includes(store)) {
 
-    })
+      const newVisited = this.state.visited.filter ((v) =>{
+        return v.id !== store.id
+      })
+
+      this.setState({
+        visited: newVisited
+      })
+
+    } else {
+      this.setState({
+        visited: [...this.state.visited, store]
+      })
+    }
   }
 
   drawerToggleClickHandler = () => {
@@ -58,14 +80,14 @@ class App extends React.Component{
   }
 
   render(){
-    console.log('App state', this.state)
+    // console.log('App state', this.state)
     // RENDER THE BACKDROP CONDITIONALLY
     let backdrop;
     if(this.state.drawerOpen){
       backdrop = <Backdrop
         backdropClickHandler={this.backdropClickHandler}/>;
     }
-    console.log('App state', this.state)
+    // console.log('App state', this.state)
     return (
       <div className="conts-wrapper">
         <NavBar
