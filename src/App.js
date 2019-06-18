@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage'
 import LoginPage from './components/LoginPage'
 import SignupPage from './SignupPage'
-import ProfilePage from './ProfilePage'
 
 import NavBar from './components/NavBar'
 import SideDrawer from './SideDrawer/SideDrawer'
@@ -23,6 +22,8 @@ class App extends React.Component{
     fetch('http://localhost:3000/profile', {
       headers: {"Authorization": localStorage.getItem("token")}
     })
+      .then( res => res.json())
+      .then( data => console.log("we here " , data ))
   }
 
   drawerToggleClickHandler = () => {
@@ -59,8 +60,6 @@ class App extends React.Component{
             router={props}
             /> }
           />
-          <Route exact path="/profile" component={ProfilePage}/>
-
         </Switch>
       </div>
 
