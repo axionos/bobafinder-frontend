@@ -28,7 +28,7 @@ class App extends React.Component{
     .then(data => this.setState({
       favorites: data.favorites,
       visited: data.visited
-    }))
+    }, () => console.log('profile data', data)))
   }
 
   drawerToggleClickHandler = () => {

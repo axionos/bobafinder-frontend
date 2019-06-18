@@ -6,18 +6,18 @@ import './SideDrawer.css'
 class SideDrawer extends React.Component {
 
   // RENDER FAVORITE STORES
-  // renderFavorites = () => {
-  //   return this.props.favorites.map(favorite => {
-  //     return <Favorites key={favorite.id} favorite={favorite}/>
-  //   })
-  // }
+  renderFavorites = () => {
+    return this.props.favorites.map(favorite => {
+      return <Favorites key={favorite.id} favorite={favorite}/>
+    })
+  }
 
   // RENDER VISITED STORES
-  // renderVisited = () => {
-  //   return this.props.visited.map(visited => {
-  //     return <Visited key={visited.id} visited={visited}/>
-  //   })
-  // }
+  renderVisited = () => {
+    return this.props.visited.map(visited => {
+      return <Visited key={visited.id} visited={visited}/>
+    })
+  }
 
   render(){
     console.log('SideDrawer Props', this.props)
@@ -30,11 +30,11 @@ class SideDrawer extends React.Component {
       <div className={drawerClasses}>
         <div className="favorite-list">
           <h3 className="title">Favorite Stores</h3>
-          {/*this.renderFavorites()*/}
+          {this.renderFavorites()}
         </div>
         <div className="visited-list">
           <h3 className="title">Visited Stores</h3>
-          {/*this.renderVisited()*/}
+          {this.renderVisited()}
         </div>
       </div>
 
