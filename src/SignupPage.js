@@ -40,14 +40,20 @@ class SignupPage extends React.Component{
   render(){
     return(
       <div className="wrapper">
-        <h3>Sign up form</h3>
-        <form onSubmit={this.handleSignUp}>
-          Username
-          <input type='text' name="username" onChange={this.handleChange}/>
-          Password
-          <input type='password' name="password" onChange={this.handleChange} />
-          <input type='submit' value="Sign Up" />
-        </form>
+        <div className="signup-container">
+          <div className="signup-wrapper">
+            <h3>Join <span className="join">Boba Finder!</span> 😋</h3>
+            <form onSubmit={this.handleSignUp}>
+              Username
+              <div className="form-inputs"><input type='text' name="username" onChange={this.handleChange}/></div>
+              Password
+              <div className="form-inputs"><input type='password' name="password" onChange={this.handleChange} /></div>
+              <div className="btn-container signup">
+                <input className="login-btn" type='submit' value="Sign Up" />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }

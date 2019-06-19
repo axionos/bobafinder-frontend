@@ -55,7 +55,7 @@ class LoginPage extends React.Component{
 
         <div className="signup-container">
           <div className="signup-wrapper">
-            <h3>Join <span className="join">Boba Finder!</span> 😋</h3>
+            <h3>Log In 😉</h3>
             <form onSubmit={this.handleSubmit}>
               Username
               <div className="form-inputs"><input type='text' name="username" onChange={this.handleChange}/></div>
