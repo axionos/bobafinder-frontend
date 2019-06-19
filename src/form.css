@@ -27,8 +27,41 @@
   font-weight: bold;
 }
 
+.form-inputs {
+  width: 250px;
+  padding-bottom: 20px;
+}
+
+.form-inputs input {
+  width: 100%;
+}
+
+.btn-container{
+text-align: center;
+
+}
+
+.btn-container .login-btn {
+  text-align: left;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: #fff;
+  background-color: #3B55CE;
+  border: 1px solid #3B55CE;
+}
+
+.btn-container.signup {
+  margin-top: 30px;
+}
+
+.login-btn:hover {
+  background-color: #ff61be;
+  border: 1px solid #ff61be;
+}
+
 .signup-btn {
-  text-align: center;
+  text-align: right;
   margin-top: 50px;
 }
 
