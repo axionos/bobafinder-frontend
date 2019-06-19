@@ -1,4 +1,5 @@
 import React from 'react'
+import './form.css'
 
 class SignupPage extends React.Component{
 
@@ -38,7 +39,7 @@ class SignupPage extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="wrapper">
         <h3>Sign up form</h3>
         <form onSubmit={this.handleSignUp}>
           Username

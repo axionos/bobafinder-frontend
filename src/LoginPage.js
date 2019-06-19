@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './form.css'
 
 class LoginPage extends React.Component{
 
@@ -49,15 +50,24 @@ class LoginPage extends React.Component{
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          Username
-          <input type='text' name="username" onChange={this.handleChange}/>
-          Password
-          <input type='password' name="password" onChange={this.handleChange} />
-          <input type='submit' value="Log In" />
-        </form>
-        <Link to='/signup'>Sign Up </Link>
+      <div className="wrapper">
+
+
+        <div className="signup-container">
+          <div className="signup-wrapper">
+            <h3>Join <span className="join">Boba Finder!</span> 😋</h3>
+            <form onSubmit={this.handleSubmit}>
+              Username
+              <div className="form-inputs"><input type='text' name="username" onChange={this.handleChange}/></div>
+              Password
+              <div className="form-inputs"><input type='password' name="password" onChange={this.handleChange} /></div>
+              <div className="btn-container">
+                <input className="login-btn" type='submit' value="Log In" />
+                <Link className="signup-btn" to='/signup' >Sign Up </Link>
+              </div>
+            </form>
+          </div>
+        </div>
         {
           // waiting on browser router  temp solution
         }
