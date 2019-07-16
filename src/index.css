@@ -122,6 +122,17 @@ body {
   background-color: #fff;
 }
 
+.search-result-container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.search-result {
+  background-color: #3b55ce;
+  color: #fff;
+  padding: 10px;
+}
+
 .store-conts {
   display: -webkit-flex;
     display: -ms-flex;

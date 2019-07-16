@@ -1,6 +1,7 @@
 import React from 'react';
 import Store from './Store'
 import Container from 'react-bootstrap/Container'
+import {Col, Row} from 'react-bootstrap'
 
 
 
@@ -22,9 +23,12 @@ class StoreList extends React.Component{
   }
 
   render(){
-    // console.log('Search Props', this.props)
+    console.log('Search Props', this.props)
     return (
       <Container className="storeList">
+        <div className='search-result-container'>
+          <span className='search-result'>{this.props.stores.length} stores found</span>
+        </div>
         {this.renderStores()}
       </Container>
     );

@@ -29,13 +29,6 @@ class HomePage extends React.Component{
 
   } // End Component did mount
 
-  // handleLogOut = () => {
-  //   // will clear the token and redirect the user back to the login page
-  //   console.log('being clicked')
-  //   localStorage.clear()
-  //   this.props.history.push("/login")
-  //
-  // }
 
   filterStore = (e) => {
     this.setState({
