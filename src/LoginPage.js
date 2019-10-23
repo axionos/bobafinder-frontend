@@ -26,7 +26,7 @@ class LoginPage extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault()
 
-    fetch('http://localhost:3000/login',{
+    fetch('http://localhost:3100/login',{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -47,7 +47,7 @@ class LoginPage extends React.Component{
       if (localStorage.getItem("token")==="undefined"){
         localStorage.clear()
       } else if (!!localStorage.getItem("token")){
-        window.location.replace(`http://localhost:3001/`)
+        window.location.replace(`http://localhost:3002/`)
         // this.props.router.history.push('/')
 
       }

@@ -19,7 +19,7 @@ class SignupPage extends React.Component{
     e.preventDefault()
 
     // creating a new user
-    fetch('http://localhost:3000/signup',{
+    fetch('http://localhost:3100/signup',{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -30,7 +30,7 @@ class SignupPage extends React.Component{
     .then( data => {
       // if successful, token will be recieved
       localStorage.setItem('token', data.token)
-      window.location.replace(`http://localhost:3001/`)
+      window.location.replace(`http://localhost:3002/`)
       // this.props.history.push('/')
       //after sign up pushed to main page
     })

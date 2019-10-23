@@ -30,7 +30,7 @@ class Store extends React.Component{
       like: !this.state.like
     })
 
-    fetch('http://localhost:3000/favorite',{
+    fetch('http://localhost:3100/favorite',{
       method: "POST",
       headers: {
         "Authorization": localStorage.getItem("token"),
@@ -51,7 +51,7 @@ class Store extends React.Component{
       visited: !this.state.visited
     })
 
-    fetch('http://localhost:3000/visit',{
+    fetch('http://localhost:3100/visit',{
       method: "POST",
       headers: {
         "Authorization": localStorage.getItem("token"),

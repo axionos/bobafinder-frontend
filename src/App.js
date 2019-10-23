@@ -22,7 +22,7 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000/profile', {
+    fetch('http://localhost:3100/profile', {
       headers: {"Authorization": localStorage.getItem("token")}
     })
     .then(res => res.json())

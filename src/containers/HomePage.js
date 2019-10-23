@@ -15,7 +15,7 @@ class HomePage extends React.Component{
       this.props.history.push("/login")
     }
 
-    fetch("http://localhost:3000/stores", {
+    fetch("http://localhost:3100/stores", {
       headers:{
         "Authorization": localStorage.getItem("token")
       }
